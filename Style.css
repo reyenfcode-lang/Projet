@@ -87,3 +87,31 @@ header h1 {
 header p {
   font-size: 16px;
 }
+article {
+  background-color: #f7f7f7;
+  padding: 16px;
+  margin-top: 12px;
+  border-radius: 8px;
+}
+article h3 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+article p {
+  margin: 6px 0;
+}
+article a {
+  display: inline-block;
+  margin-top: 6px;
+}
+section h2 + ul li {
+  display: block;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  margin: 8px 0;
+}
+main section {
+  margin-top: 16px;
+}
