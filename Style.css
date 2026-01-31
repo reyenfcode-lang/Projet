@@ -4,6 +4,7 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
+
 body section {
   background-color: white;
   padding: 20px;
@@ -46,7 +47,8 @@ li {
   margin-bottom: 6px;
 }
 
-li {
+/* Badges uniquement pour compétences */
+.badges li {
   display: inline-block;
   background-color: lightblue;
   padding: 6px 10px;
@@ -75,10 +77,12 @@ header p {
   object-fit: cover;
   margin-bottom: 12px;
 }
+
 header img {
   display: block;
   margin: 0 auto 12px auto;
 }
+
 header h1 {
   font-size: 34px;
   margin-bottom: 6px;
@@ -87,12 +91,14 @@ header h1 {
 header p {
   font-size: 16px;
 }
+
 article {
   background-color: #f7f7f7;
   padding: 16px;
   margin-top: 12px;
   border-radius: 8px;
 }
+
 article h3 {
   margin-top: 0;
   margin-bottom: 6px;
@@ -101,17 +107,49 @@ article h3 {
 article p {
   margin: 6px 0;
 }
+
 article a {
   display: inline-block;
   margin-top: 6px;
 }
-section h2 + ul li {
-  display: block;
-  background-color: transparent;
-  padding: 0;
-  border-radius: 0;
-  margin: 8px 0;
-}
+
 main section {
   margin-top: 16px;
+}
+p {
+  margin: 8px 0;
+}
+
+section {
+  margin-bottom: 16px;
+}
+
+article {
+  margin-bottom: 12px;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-color: #eaeaea;
+  }
+}
+@media (max-width: 600px) {
+  header,
+  main {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
 }
