@@ -153,3 +153,30 @@ img {
     font-size: 18px;
   }
 }
+section:last-of-type {
+  margin-bottom: 32px;
+}
+.contact a {
+  font-size: 16px;
+}
+.contact a {
+  display: inline-block;
+}
+.contact a {
+  margin-top: 8px;
+}
+.contact {
+  text-align: center;
+}
+.contact a {
+  word-break: break-all;
+}
+.contact a {
+  padding: 4px 8px;
+}
+.contact a {
+  border-radius: 6px;
+}
+.contact a:hover {
+  background-color: lightgray;
+}
