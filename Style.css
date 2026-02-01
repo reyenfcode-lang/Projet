@@ -194,3 +194,22 @@ html {
 * {
   box-sizing: border-box;
 }
+
+section {
+  transition:
+    background-color 0,
+    2s;
+}
+section h2:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+section {
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s;
+}
+
+section[style*="background-color"] {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
