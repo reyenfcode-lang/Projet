@@ -271,3 +271,26 @@ header h1:hover {
     text-align: center;
   }
 }
+/* Projets : cartes plus pro + zone de liens */
+.projet {
+  border-left: 6px solid lightblue;
+}
+
+.projet-liens {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.projet-liens a {
+  background-color: lightblue;
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.projet-liens a:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
