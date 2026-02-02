@@ -208,3 +208,11 @@ header h1 {
 header h1:hover {
   opacity: 0.85;
 }
+/* Section À propos : mise en valeur légère */
+#apropos {
+  border-left: 6px solid lightblue;
+}
+
+#apropos p {
+  max-width: 750px;
+}
