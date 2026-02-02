@@ -241,3 +241,33 @@ header h1:hover {
   outline: 2px solid lightblue;
   outline-offset: 3px;
 }
+/* Header responsive amélioré */
+@media (max-width: 600px) {
+  header {
+    padding: 16px;
+  }
+
+  .photo-profil {
+    width: 90px;
+    height: 90px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  .nav-sections {
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .nav-sections a {
+    width: 100%;
+    text-align: center;
+  }
+}
