@@ -216,3 +216,28 @@ header h1:hover {
 #apropos p {
   max-width: 750px;
 }
+/* Navigation sections (ancres) */
+.nav-sections {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.nav-sections a {
+  background-color: #f2f2f2;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.nav-sections a:hover {
+  background-color: lightblue;
+  text-decoration: none;
+}
+
+.nav-sections a:focus {
+  outline: 2px solid lightblue;
+  outline-offset: 3px;
+}
