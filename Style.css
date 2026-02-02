@@ -335,3 +335,24 @@ section[style*="background-color"] {
 section[style*="background-color"] > *:not(h2) {
   opacity: 0.98;
 }
+/* Titres cliquables : indice visuel permanent */
+section h2::after {
+  content: " ▾";
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+/* Quand la section est ouverte, on enlève l’indice */
+section[style*="background-color"] h2::after {
+  content: "";
+}
+/* Badges cliquables */
+.badges li a {
+  color: inherit;
+  font-weight: bold;
+}
+
+.badges li a:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}

@@ -13,25 +13,13 @@ if (titre) {
   });
 }
 
-// ===== Helpers fermeture/ouverture (réutilisables) =====
+// ===== Helpers fermeture/ouverture =====
 function fermerSection(uneSection) {
   uneSection.style.backgroundColor = "";
-
-  var h2 = uneSection.querySelector("h2");
-  if (h2) {
-    h2.textContent = h2.textContent.replace(" ▾", "");
-  }
 }
 
 function ouvrirSection(uneSection) {
   uneSection.style.backgroundColor = "lightblue";
-
-  var h2 = uneSection.querySelector("h2");
-  if (h2) {
-    var texteBase = h2.textContent.replace(" ▾", "");
-    h2.textContent = texteBase + " ▾";
-  }
-
   uneSection.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
@@ -72,12 +60,8 @@ function activerSection(idSection) {
     }
   });
 
-  // Empêche le clic à l'intérieur de la section de déclencher la fermeture globale
-  // sauf si on clique sur un lien (on laisse le lien faire sa vie)
+  // Clic dans la section : ne ferme pas tout
   section.addEventListener("click", function (event) {
-    if (event.target && event.target.tagName === "A") {
-      return;
-    }
     event.stopPropagation();
   });
 }
