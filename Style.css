@@ -326,3 +326,12 @@ img {
     text-align: center;
   }
 }
+/* Section active : contraste plus clair */
+section[style*="background-color"] {
+  transform: translateY(-1px);
+}
+
+/* Indice visuel discret sur le contenu */
+section[style*="background-color"] > *:not(h2) {
+  opacity: 0.98;
+}

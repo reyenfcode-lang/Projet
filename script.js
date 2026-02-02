@@ -73,7 +73,11 @@ function activerSection(idSection) {
   });
 
   // Empêche le clic à l'intérieur de la section de déclencher la fermeture globale
+  // sauf si on clique sur un lien (on laisse le lien faire sa vie)
   section.addEventListener("click", function (event) {
+    if (event.target && event.target.tagName === "A") {
+      return;
+    }
     event.stopPropagation();
   });
 }
