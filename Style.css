@@ -88,6 +88,13 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Accessibilité : focus visible partout */
+a:focus {
+  outline: 2px solid lightblue;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
 /* Header */
 header p {
   margin-top: 8px;
@@ -97,6 +104,15 @@ header p {
 header h1 {
   font-size: 34px;
   margin-bottom: 6px;
+}
+
+/* h1 cliquable (cohérent avec le JS) */
+header h1 {
+  cursor: pointer;
+}
+
+header h1:hover {
+  opacity: 0.85;
 }
 
 header img {
@@ -112,6 +128,45 @@ header img {
   margin-bottom: 12px;
 }
 
+/* Navigation sections (ancres) */
+.nav-sections {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.nav-sections a {
+  background-color: #f2f2f2;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  min-width: 120px;
+}
+
+.nav-sections a:hover {
+  background-color: lightblue;
+  text-decoration: none;
+  border-color: lightblue;
+}
+
+.nav-sections a:focus {
+  outline: 2px solid lightblue;
+  outline-offset: 3px;
+  border-color: lightblue;
+}
+
+/* Section À propos : mise en valeur légère */
+#apropos {
+  border-left: 6px solid lightblue;
+}
+
+#apropos p {
+  max-width: 750px;
+}
+
 /* Badges compétences */
 .badges li {
   display: inline-block;
@@ -119,6 +174,30 @@ header img {
   padding: 6px 10px;
   border-radius: 6px;
   margin: 4px;
+}
+
+/* Titres de sections : zone cliquable plus agréable */
+section h2 {
+  display: inline-block;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+section h2:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  background-color: #f2f2f2;
+}
+
+section h2:focus {
+  outline: 2px solid lightblue;
+  outline-offset: 4px;
+}
+
+/* Quand une section est "active" via JS */
+section[style*="background-color"] h2 {
+  color: darkblue;
+  background-color: white;
 }
 
 /* Articles projets */
@@ -144,20 +223,42 @@ article a {
   margin-top: 6px;
 }
 
+/* Projets : cartes plus pro + zone de liens */
+.projet {
+  border-left: 6px solid lightblue;
+}
+
+.projet-liens {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.projet-liens a {
+  background-color: lightblue;
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.projet-liens a:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
 /* Images */
 img {
   max-width: 100%;
 }
 
-/* Effet hover sur les titres des sections (cliquables) */
-section h2:hover {
-  cursor: pointer;
-  opacity: 0.8;
-}
-
 /* Contact */
 .contact {
   text-align: center;
+}
+
+.contact p {
+  margin: 10px 0;
 }
 
 .contact a {
@@ -167,10 +268,11 @@ section h2:hover {
   word-break: break-all;
   padding: 4px 8px;
   border-radius: 6px;
+  background-color: #f2f2f2;
 }
 
 .contact a:hover {
-  background-color: lightgray;
+  background-color: lightblue;
 }
 
 /* Responsive */
@@ -193,54 +295,7 @@ section h2:hover {
     font-size: 18px;
   }
 }
-section h2:focus {
-  outline: 2px solid lightblue;
-  outline-offset: 4px;
-}
-section[style*="background-color"] h2 {
-  color: darkblue;
-}
-/* h1 cliquable (cohérent avec le JS) */
-header h1 {
-  cursor: pointer;
-}
 
-header h1:hover {
-  opacity: 0.85;
-}
-/* Section À propos : mise en valeur légère */
-#apropos {
-  border-left: 6px solid lightblue;
-}
-
-#apropos p {
-  max-width: 750px;
-}
-/* Navigation sections (ancres) */
-.nav-sections {
-  margin-top: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.nav-sections a {
-  background-color: #f2f2f2;
-  padding: 6px 10px;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-.nav-sections a:hover {
-  background-color: lightblue;
-  text-decoration: none;
-}
-
-.nav-sections a:focus {
-  outline: 2px solid lightblue;
-  outline-offset: 3px;
-}
 /* Header responsive amélioré */
 @media (max-width: 600px) {
   header {
@@ -270,27 +325,4 @@ header h1:hover {
     width: 100%;
     text-align: center;
   }
-}
-/* Projets : cartes plus pro + zone de liens */
-.projet {
-  border-left: 6px solid lightblue;
-}
-
-.projet-liens {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.projet-liens a {
-  background-color: lightblue;
-  padding: 6px 10px;
-  border-radius: 8px;
-  display: inline-block;
-}
-
-.projet-liens a:hover {
-  opacity: 0.9;
-  text-decoration: none;
 }
