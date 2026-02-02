@@ -5,11 +5,15 @@ var titre = document.querySelector("h1");
 
 if (titre) {
   titre.addEventListener("click", function () {
-    titre.style.color = titre.style.color === "darkblue" ? "" : "darkblue";
+    if (titre.style.color === "darkblue") {
+      titre.style.color = "";
+    } else {
+      titre.style.color = "darkblue";
+    }
   });
 }
 
-// ===== Fonction simple pour sections =====
+// ===== Sections (Compétences / Projets / Parcours) =====
 function activerSection(idSection) {
   var section = document.querySelector(idSection);
   if (!section) return;
@@ -17,9 +21,43 @@ function activerSection(idSection) {
   var titreSection = section.querySelector("h2");
   if (!titreSection) return;
 
+  function fermerSection(uneSection) {
+    uneSection.style.backgroundColor = "";
+
+    var h2 = uneSection.querySelector("h2");
+    if (h2) {
+      h2.textContent = h2.textContent.replace(" ▾", "");
+    }
+  }
+
+  function ouvrirSection(uneSection) {
+    uneSection.style.backgroundColor = "lightblue";
+
+    var h2 = uneSection.querySelector("h2");
+    if (h2) {
+      var texteBase = h2.textContent.replace(" ▾", "");
+      h2.textContent = texteBase + " ▾";
+    }
+
+    uneSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   function toggleSection() {
-    section.style.backgroundColor =
-      section.style.backgroundColor === "lightblue" ? "" : "lightblue";
+    var sections = document.querySelectorAll("section");
+
+    sections.forEach(function (autreSection) {
+      if (autreSection !== section) {
+        fermerSection(autreSection);
+      }
+    });
+
+    var ouverte = section.style.backgroundColor === "lightblue";
+
+    if (ouverte) {
+      fermerSection(section);
+    } else {
+      ouvrirSection(section);
+    }
   }
 
   titreSection.addEventListener("click", function (event) {

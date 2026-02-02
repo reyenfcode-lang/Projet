@@ -193,3 +193,10 @@ section h2:hover {
     font-size: 18px;
   }
 }
+section h2:focus {
+  outline: 2px solid lightblue;
+  outline-offset: 4px;
+}
+section[style*="background-color"] h2 {
+  color: darkblue;
+}
