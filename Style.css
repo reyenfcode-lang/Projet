@@ -200,3 +200,11 @@ section h2:focus {
 section[style*="background-color"] h2 {
   color: darkblue;
 }
+/* h1 cliquable (cohérent avec le JS) */
+header h1 {
+  cursor: pointer;
+}
+
+header h1:hover {
+  opacity: 0.85;
+}

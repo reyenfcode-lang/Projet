@@ -43,7 +43,7 @@ function activerSection(idSection) {
   }
 
   function toggleSection() {
-    var sections = document.querySelectorAll("section");
+    var sections = document.querySelectorAll("section:not(.contact)");
 
     sections.forEach(function (autreSection) {
       if (autreSection !== section) {
