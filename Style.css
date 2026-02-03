@@ -356,3 +356,80 @@ section[style*="background-color"] h2::after {
   text-decoration: none;
   opacity: 0.9;
 }
+/* Section École */
+.ecole-carte {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ecole-image {
+  width: 160px;
+  border-radius: 10px;
+}
+
+.ecole-infos p {
+  margin: 6px 0;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ecole-carte {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* École : hiérarchie texte */
+.ecole-titre {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Carte École : cohérence avec le reste du site */
+.ecole-carte {
+  background-color: #f7f7f7;
+  padding: 16px;
+  border-radius: 10px;
+  border-left: 6px solid lightblue;
+}
+
+.ecole-image {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* École : lecture rapide */
+.ecole-infos strong {
+  display: inline-block;
+  min-width: 90px;
+}
+/* École : légère mise en avant sans dominer */
+#ecole {
+  border-left: 6px solid lightblue;
+}
+/* Image école : proportions propres */
+.ecole-image {
+  height: 110px;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .ecole-image {
+    width: 100%;
+    max-width: 320px;
+    height: 160px;
+  }
+}
+/* Lien école */
+.ecole-lien {
+  display: inline-block;
+  margin-top: 6px;
+  background-color: #f2f2f2;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.ecole-lien:hover {
+  background-color: lightblue;
+  text-decoration: none;
+}
