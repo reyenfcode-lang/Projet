@@ -6,56 +6,64 @@
     <title>Mon site CV</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <header>
-      <img
-        src="img/photo.jpg"
-        alt="Photo de profil de Reyen Fourati"
-        class="photo-profil"
-      />
+      <div class="header-top">
+        <img
+          src="img/photo.jpg"
+          alt="Photo de profil de Reyen Fourati"
+          class="photo-profil"
+        />
 
-      <h1>Reyen Fourati</h1>
+        <div class="header-texte">
+          <h1>Reyen Fourati</h1>
 
-      <p>Étudiant en BTS SIO SLAM</p>
+          <p>Étudiant en BTS SIO SLAM</p>
+          <p>
+            Je me forme au développement web et je recherche une alternance.
+          </p>
 
-      <p>Je me forme au développement web et je recherche une alternance.</p>
+          <p class="header-liens">
+            <a
+              href="https://github.com/reyenfcode-lang"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub
+            </a>
+            |
+            <a href="mailto:reyen.fourati@gmail.com">
+              reyen.fourati@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
 
-      <p>
-        <a
-          href="https://github.com/reyenfcode-lang"
-          target="_blank"
-          rel="noopener"
-          >GitHub</a
-        >
-        |
-        <a href="mailto:reyen.fourati@gmail.com">reyen.fourati@gmail.com</a>
-      </p>
-
-      <nav class="nav-sections" aria-label="Navigation du CV">
+      <nav class="nav-sections">
         <a href="#apropos">À propos</a>
         <a href="#ecole">École</a>
         <a href="#competences">Compétences</a>
-        <a href="#projets">Projets</a>
-        <a href="#parcours">Parcours</a>
+        <a href="#projet">Projet</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main>
-      <section id="apropos">
-        <h2 tabindex="0">À propos</h2>
+      <section id="apropos" class="card">
+        <h2>À propos</h2>
         <p>
-          Je suis étudiant en BTS SIO SLAM et je construis progressivement mes
-          bases en développement web.
+          Je suis étudiant en BTS SIO SLAM et je développe progressivement mes
+          compétences en développement web.
         </p>
         <p>
-          J’aime apprendre par la pratique et je cherche une alternance pour
-          monter en compétences en entreprise.
+          J’apprends par la pratique et je souhaite évoluer en entreprise grâce
+          à une alternance.
         </p>
       </section>
 
-      <section id="ecole">
-        <h2 tabindex="0">École & alternance</h2>
+      <section id="ecole" class="card">
+        <h2>École & alternance</h2>
 
         <div class="ecole-carte">
           <img
@@ -63,74 +71,43 @@
             alt="Campus de l'Institut F2I"
             class="ecole-image"
           />
-
-          <div class="ecole-infos">
+          <div>
             <p class="ecole-titre">Institut F2I — BTS SIO SLAM (alternance)</p>
-
             <p><strong>Contrat :</strong> Apprentissage</p>
-
             <p>
               <strong>Rythme :</strong> 1 semaine entreprise / 1 semaine école
             </p>
-
             <p><strong>Localisation :</strong> Île-de-France</p>
-
-            <p>
-              <a
-                href="https://share.google/KfhYnfJkeDnfSVwQM"
-                class="ecole-lien"
-                target="_blank"
-                rel="noopener"
-                title="Voir le campus sur Google Maps"
-              >
-                Voir sur Google Maps
-              </a>
-            </p>
           </div>
         </div>
       </section>
 
-      <section id="competences">
-        <h2 tabindex="0">Compétences</h2>
+      <section id="competences" class="card">
+        <h2>Compétences</h2>
         <ul class="badges">
-          <li><a href="#certifications">HTML</a></li>
-          <li><a href="#certifications">CSS</a></li>
-          <li><a href="#certifications">Git</a></li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Git / GitHub</li>
+          <li>VS Code</li>
         </ul>
       </section>
 
-      <section id="projets">
-        <h2 tabindex="0">Projets</h2>
-
-        <article class="projet">
+      <section id="projet" class="card">
+        <h2>Projet</h2>
+        <article>
           <h3>Site CV (ce site)</h3>
           <p>
-            Site vitrine réalisé en HTML, CSS et JavaScript pour présenter mon
-            profil et mes projets.
+            Site vitrine développé en HTML, CSS et JavaScript pour présenter mon
+            profil.
           </p>
         </article>
       </section>
 
-      <section id="parcours">
-        <h2 tabindex="0">Parcours</h2>
-        <ul>
-          <li>
-            <strong>BTS SIO SLAM</strong> — Développement d’applications et
-            bases du web.
-          </li>
-        </ul>
-      </section>
-
-      <section id="certifications">
-        <h2 tabindex="0">Certifications</h2>
-        <p>À venir.</p>
-      </section>
-
-      <section class="contact" id="contact">
+      <section id="contact" class="card contact">
         <h2>Contact</h2>
         <p>
-          📞
-          <a href="tel:+33754507200">07&nbsp;54&nbsp;50&nbsp;72&nbsp;00</a>
+          📞 <a href="tel:+33754507200">07&nbsp;54&nbsp;50&nbsp;72&nbsp;00</a>
         </p>
         <p>
           ✉️

@@ -9,6 +9,18 @@
   --text-main: #e6ebff;
   --text-muted: #b8c2ff;
   --blue: #4da3ff;
+  --border: rgba(77, 163, 255, 0.22);
+
+  --violet-bg: #14103a;
+  --violet-glow-1: rgba(139, 92, 246, 0.18);
+  --violet-glow-2: rgba(139, 92, 246, 0.1);
+
+  --glow-blue-1: rgba(77, 163, 255, 0.16);
+  --glow-blue-2: rgba(77, 163, 255, 0.06);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -19,6 +31,18 @@ body {
   line-height: 1.6;
 }
 
+/* ===== LIENS (évite le violet des liens visités) ===== */
+a,
+a:visited {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 /* ===== HEADER ===== */
 header {
   max-width: 900px;
@@ -27,8 +51,8 @@ header {
   background-color: var(--bg-card);
   border-radius: 12px;
   box-shadow:
-    0 0 40px rgba(77, 163, 255, 0.18),
-    0 0 80px rgba(77, 163, 255, 0.08);
+    0 0 40px var(--glow-blue-1),
+    0 0 80px var(--glow-blue-2);
 }
 
 .header-top {
@@ -43,7 +67,7 @@ header {
   border-radius: 14px;
   object-fit: cover;
   object-position: center 20%;
-  border: 2px solid rgba(77, 163, 255, 0.25);
+  border: 1px solid var(--border);
 }
 
 .header-texte {
@@ -63,22 +87,6 @@ header p {
   color: var(--text-muted);
 }
 
-/* Liens */
-a {
-  color: var(--blue);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Empêche le violet des liens visités */
-a:visited {
-  color: var(--blue);
-}
-
 /* Nav */
 .nav-sections {
   margin-top: 18px;
@@ -89,13 +97,15 @@ a:visited {
 }
 
 .nav-sections a {
-  padding: 6px 10px;
+  padding: 7px 12px;
   background-color: var(--bg-soft);
   border-radius: 8px;
-  border: 1px solid rgba(77, 163, 255, 0.25);
+  border: 1px solid var(--border);
+  cursor: pointer;
   transition:
     transform 0.2s ease,
-    background-color 0.2s ease;
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .nav-sections a:hover {
@@ -103,6 +113,13 @@ a:visited {
   color: #000;
   text-decoration: none;
   transform: translateY(-1px);
+  box-shadow: 0 0 18px rgba(77, 163, 255, 0.18);
+}
+
+/* Focus clavier (petit détail "pro") */
+.nav-sections a:focus {
+  outline: 2px solid rgba(77, 163, 255, 0.7);
+  outline-offset: 3px;
 }
 
 /* ===== MAIN ===== */
@@ -111,28 +128,31 @@ main {
   margin: 0 auto 40px;
 }
 
-/* CARTES AVEC LUMIÈRE */
+/* Cartes avec halo bleu */
 .card {
   margin: 18px 0;
   padding: 22px;
   background-color: var(--bg-card);
   border-radius: 12px;
   box-shadow:
-    0 0 35px rgba(77, 163, 255, 0.15),
-    0 0 70px rgba(77, 163, 255, 0.06);
+    0 0 35px var(--glow-blue-1),
+    0 0 70px var(--glow-blue-2);
   transition:
     background-color 0.25s ease,
-    box-shadow 0.25s ease;
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
 }
 
 /* Hover violet doux */
 .card:hover {
-  background-color: #14103a;
+  background-color: var(--violet-bg);
   box-shadow:
-    0 0 30px rgba(139, 92, 246, 0.18),
-    0 0 60px rgba(139, 92, 246, 0.1);
+    0 0 30px var(--violet-glow-1),
+    0 0 60px var(--violet-glow-2);
+  transform: translateY(-1px);
 }
 
+/* Titres */
 h2 {
   margin-top: 0;
   color: var(--blue);
@@ -142,6 +162,7 @@ h2 {
 .badges {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .badges li {
@@ -150,15 +171,17 @@ h2 {
   padding: 6px 10px;
   background-color: var(--blue);
   color: #000;
-  border-radius: 6px;
+  border-radius: 999px; /* plus clean que 6px */
   font-weight: bold;
+  font-size: 14px;
 }
 
 /* Projet */
 article {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 16px;
-  border-radius: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* École */
@@ -174,6 +197,7 @@ article {
   height: 110px;
   object-fit: cover;
   border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .ecole-titre {
@@ -185,7 +209,7 @@ article {
   text-align: center;
 }
 
-/* ===== RESPONSIVE ===== */
+/* Responsive */
 @media (max-width: 600px) {
   header,
   main {
